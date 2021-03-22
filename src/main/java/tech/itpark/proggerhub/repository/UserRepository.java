@@ -7,5 +7,4 @@ import java.util.Map;
 
 public class UserRepository {
     private final Map<String, User> users = new HashMap<>();
-
 }

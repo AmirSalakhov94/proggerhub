@@ -1,5 +1,9 @@
 package tech.itpark.proggerhub;
 
+import tech.itpark.di.Container;
+import tech.itpark.proggerhub.repository.UserRepository;
+import tech.itpark.proggerhub.service.UserService;
+
 public class Main {
     // psvm + Tab -> main
     public static void main(String[] args) {
@@ -13,5 +17,10 @@ public class Main {
         // 2. Dependency Injection -> Container:
         // 2.1 Сам делал new
         // 2.2 Найти нужные зависимости, если они требуются для new
+        Container container = new Container();
+        container.register(UserRepository.class, UserService.class);
+        container.wire();
+
+        System.out.println("dfdf");
     }
 }
